@@ -2,6 +2,22 @@
   <h1>Sorteios</h1>
 </section class="content">
 <section class="content" ng-controller="sorteioCtrl">
-  <button class="btn btn-default" ng-click="realizarSorteio()">Realizar Sorteio!</button>
-  {{mensagem}}
+  <div>
+    <button class="btn btn-default" ng-click="realizarSorteio()">Realizar Sorteio!</button>
+  </div>
+  <div class="panel panel-info">
+    <div class="panel-body">
+      {{mensagemSorteio}}
+    </div>
+  </div>
+  <div>
+    <button class="btn btn-default" ng-click="verificarGanhador()">Verificar Ganhador</button>
+  </div>
+  <div class="panel panel-info">
+    <div class="panel-body">
+      {{mensagemGanhador}}
+    </div>
+  </div>
+
+
 </section>
