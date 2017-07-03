@@ -3,14 +3,14 @@
 </section>
 
 <section class="content" ng-controller="apostasCtrl">
-  <form>
+  <form name="formAposta">
     <div class="form-group">
       <label for="name">Nome do apostador: </label>
-      <input type="text" class="form-control" id="name" placeholder="Nome" ng-model="apostador.name">
+      <input type="text" class="form-control" id="name" placeholder="Nome" ng-model="apostador.name" required>
     </div>
     <div class="form-group">
       <label for="cpf">CPF: </label>
-      <input type="number" class="form-control" id="cpf" placeholder="CPF" ng-model="apostador.cpf">
+      <input type="number" class="form-control" id="cpf" placeholder="CPF" ng-model="apostador.cpf" required>
     </div>
     <div class="form-group row">
       <div>
@@ -18,39 +18,34 @@
       </div>
       <div class="col-xs-1">
         <label for="n1">1</label>
-        <input class="form-control" id="n1" type="number" ng-model="apostador.numero[0]">
+        <input class="form-control" id="n1" type="number" ng-model="apostador.numero[0]" min="1" max="60" required>
       </div>
       <div class="col-xs-1">
         <label for="n2">2</label>
-        <input class="form-control" id="n2" type="number" ng-model="apostador.numero[1]">
+        <input class="form-control" id="n2" type="number" ng-model="apostador.numero[1]" min="1" max="60" required>
       </div>
       <div class="col-xs-1">
         <label for="n3">3</label>
-        <input class="form-control" id="n3" type="number" ng-model="apostador.numero[2]">
+        <input class="form-control" id="n3" type="number" ng-model="apostador.numero[2]" min="1" max="60" required>
       </div>
       <div class="col-xs-1">
         <label for="n4">4</label>
-        <input class="form-control" id="n4" type="number" ng-model="apostador.numero[3]">
+        <input class="form-control" id="n4" type="number" ng-model="apostador.numero[3]" min="1" max="60" required>
       </div>
       <div class="col-xs-1">
         <label for="n5">5</label>
-        <input class="form-control" id="n5" type="number" ng-model="apostador.numero[4]">
+        <input class="form-control" id="n5" type="number" ng-model="apostador.numero[4]" min="1" max="60" required>
       </div>
       <div class="col-xs-1">
         <label for="n6">6</label>
-        <input class="form-control" id="n6" type="number" ng-model="apostador.numero[5]">
+        <input class="form-control" id="n6" type="number" ng-model="apostador.numero[5]" min="1" max="60" required>
       </div>
     </div>
     <div>
-      <button class="btn btn-primary" ng-click="cadastrarAposta()">Cadastrar aposta</button>
+      <button class="btn btn-primary" ng-click="cadastrarAposta()" ng-disabled="formAposta.$invalid">Cadastrar aposta</button>
+    </div>
+    <div>
+      <button class="btn btn-primary" ng-click="limparApostas()">Apagar apostas</button>
     </div>
   </form>
-  <div class="panel panel-info">
-    <div class="panel-body">
-      {{mensagem}}
-    </div>
-  </div>
-  <div>
-    <button class="btn btn-primary" ng-click="limparApostas()">Apagar apostas</button>
-  </div>
 </section>
